@@ -1,8 +1,50 @@
 [gd_scene format=3 uid="uid://bxh5658ejt4sf"]
 
+[ext_resource type="Script" uid="uid://cjkthp5xkm4n0" path="res://player.gd" id="1_xhfnw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rwas"]
+albedo_color = Color(0, 0.85882354, 0.7019608, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0rwas"]
+material = SubResource("StandardMaterial3D_0rwas")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhfnw"]
+albedo_color = Color(0.8169063, 0.38201448, 0.36875632, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kpjcp"]
+material = SubResource("StandardMaterial3D_xhfnw")
+top_radius = 0.2
+bottom_radius = 0.001
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kne1u"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_e80uo"]
+material = SubResource("StandardMaterial3D_kne1u")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cxr5p"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1864625019]
+script = ExtResource("1_xhfnw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1898107372]
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1898107372]
 mesh = SubResource("CapsuleMesh_0rwas")
+
+[node name="Nose" type="MeshInstance3D" parent="." unique_id=644756660]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.0045034885, 0.36585796, 0.4593854)
+mesh = SubResource("CylinderMesh_kpjcp")
+
+[node name="Eye 1" type="MeshInstance3D" parent="." unique_id=1810920185]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.22, 0.58, 0.45)
+mesh = SubResource("SphereMesh_e80uo")
+
+[node name="Eye 2" type="MeshInstance3D" parent="." unique_id=782337726]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.22, 0.58, 0.45)
+mesh = SubResource("SphereMesh_e80uo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1031816663]
+shape = SubResource("CapsuleShape3D_cxr5p")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1344676806]
+transform = Transform3D(-1, -1.7763568e-15, -8.742278e-08, -3.160711e-08, 0.93235534, 0.3615432, 8.150909e-08, 0.3615432, -0.93235534, 0, 2.3430448, -2.814861)
