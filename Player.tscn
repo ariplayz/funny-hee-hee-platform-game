@@ -47,4 +47,5 @@ mesh = SubResource("SphereMesh_e80uo")
 shape = SubResource("CapsuleShape3D_cxr5p")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1344676806]
-transform = Transform3D(-1, -1.7763568e-15, -8.742278e-08, -3.160711e-08, 0.93235534, 0.3615432, 8.150909e-08, 0.3615432, -0.93235534, 0, 2.3430448, -2.814861)
+transform = Transform3D(-0.21984623, 0.2524869, -0.942294, 0, 0.9659258, 0.25881904, 0.97553456, 0.056900393, -0.21235515, -12, 3, -2)
+fov = 70.0

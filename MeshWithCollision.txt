@@ -1,0 +1,22 @@
+In the Godot Editor:
+
+Add a MeshInstance3D node to your scene
+In the Inspector, set the Mesh property (choose BoxMesh, SphereMesh, CapsuleMesh, etc.)
+At the top of the viewport, click the Mesh menu button
+Choose one of these options:
+
+Create Trimesh Static Body - for static objects like walls/floors
+Create Convex Static Body - simpler collision shape
+Create Trimesh Collision Sibling - adds collision as a sibling node
+Create Convex Collision Sibling - convex version as sibling
+
+This automatically creates the StaticBody3D and CollisionShape3D nodes as children of your mesh.
+
+
+For custom models imported from Blender/other software:
+
+Same process, but make sure your mesh is already assigned
+Trimesh collision works best for complex static geometry
+Convex collision is better for objects that need to move
+
+That's it! The collision will match your mesh shape automatically.
